@@ -10,10 +10,10 @@ $btn_anexo.click(function() {
 $input_anexo.change(function() {
   let value = $(this).val();
   if (value || value != '') {
-    $("#texto_anexo").text(value.replace('C:\\fakepath\\', '')).addClass('text-success').removeClass('text-danger');
+    $texto_anexo.text(value.replace('C:\\fakepath\\', '')).addClass('text-success').removeClass('text-danger');
     $form_send_anexo.trigger('submit');
   } else {
-    $("#texto_anexo").text('Por favor, selecione um anexo').removeClass('text-success').addClass('text-danger');
+    $texto_anexo.text('Por favor, selecione um anexo').removeClass('text-success').addClass('text-danger');
   }
 });
 
