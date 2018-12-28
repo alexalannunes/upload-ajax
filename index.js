@@ -18,11 +18,11 @@ $input_anexo.change(function() {
 });
 
 $form_send_anexo.submit(function(event) {
-
-  var cpf = $('#cpf').val().replace(/[^0-9]/g, '');
+ 
+  
   var data = new FormData(this);
 
-  data.append('cpf', cpf);
+  // data.append('id', id);
 
   $.ajax({
     url: 'php/upload.php',
@@ -33,14 +33,10 @@ $form_send_anexo.submit(function(event) {
     mimeType: "multipart/form-data",
     data: data,
     success: function(data) {
-      let response = JSON.parse(data);
-      vm.perfil_profissional.anexo = response.anexo;
-
-      // habilitar button next
-      $("#wizard_with_validation .actions a[href='noClick']").removeAttr('style').attr('href', '#next');
+      // ...
     },
     error: function() {
-      $("#texto_anexo").text('Tente novamente').removeClass('text-success').addClass('text-danger');
+      //$("#texto_anexo").text('Tente novamente').removeClass('text-success').addClass('text-danger');
     }
   });
   return false;
